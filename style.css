@@ -29,7 +29,7 @@ ul {
 /* スタイルのリセット終了 */
 
 /* サイドバーとメインコンテンツを包むための要素のスタイルを書いてください */
-.container{
+.container {
   display: flex;
   height: 100vh;
   margin: 10px;
@@ -37,74 +37,170 @@ ul {
 }
 
 /* サイドバーに関連するスタイルを書いてください */
-aside{
+aside {
   width: 20%;
-  flex-shrink:0;
+  flex-shrink: 0;
   background-color: #f5f5f5;
   border-right: 1px solid #e0e0e0;
-  
   height: 100%;
 }
-.aside-header{
+.aside-header {
   padding: 20px;
   border-bottom: 1px solid #e0e0e0;
 }
-aside p{
+/* aside p {　→ｐタグをaタグに変更したため不要
   font-size: 16px;
   font-weight: bold;
   color: #30678f;
   display: inline-block;
 }
+aside p:hover {
+  cursor: pointer;
+} */
 
-.logo{
+.logo {
   font-size: 16px;
   color: #30678f;
+  font-weight: bold;
   text-decoration: none;
+  display: inline-block;
+  cursor: default;
+  display : block;
+}
+.logo:hover {
+  cursor: pointer;
+  background-color: #d9e7f3;
+}
+.aside-nav {
+  margin: 30px 0 10px 10px;
+  color: #30678f;
+  font-weight: 500;
+}
+.favi {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 4%;
+}
+.siderber-menu-item {
+  padding: 10px 0;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.siderber-menu-item:hover {
+  cursor: pointer;
+  background-color: #d9e7f3;
 }
 
 /* メインコンテンツに関連するスタイルを書いてください */
-main{
-  
+main {
   height: 100%;
   width: 80%;
 }
-.main-header{
+.main-header {
   padding: 20px;
   border-bottom: 1px solid #e0e0e0;
   text-align: center;
   padding-bottom: 50px;
 }
-.profile-icon{
+.profile-icon {
   background-color: #30678f;
   border-radius: 50%;
   width: 60px;
   height: 60px;
   margin: 0 auto;
- 
 }
-.icon{
+.icon {
   display: inline-block;
   margin-top: 17px;
   font-size: 25px;
   color: white;
 }
-.main-header h1{
+.main-header h1 {
   font-size: 24px;
   margin-top: 10px;
 }
-.main-header p{
+.main-header p {
   font-size: 16px;
   margin-top: 10px;
   opacity: 0.6;
 }
-.message-wrapper{
+.message-wrapper {
   padding: 20px;
   width: 60%;
   margin: 0 auto;
 }
-.message-wrapper p{
+.message-wrapper p {
   font-size: 14px;
   line-height: 1.5;
-  padding-bottom : 20px;
+  padding-bottom: 20px;
   opacity: 0.6;
+}
+.hidden {
+  display: none;
+}
+.content-section{
+  width: 100%;
+  text-align: center;
+ background-color: #c5c7c9;
+}
+.section-header h2{
+  font-size: 20px;
+  padding: 20px 0 30PX 0px;
+  border-bottom:1px solid #e0e0e0;
+  gap: 15px;
+}
+.section-body{
+  border: 1px solid #e0e0e0;
+  width :60%;
+  margin: 0 auto;
+  padding: 30px 0px;
+  background-color:#ccc;
+  margin :0 auto;
+}
+.converter-input{
+  width: 100%;
+  /* ↑こいつは親要素converter-formに対していっぱいに広がる！converter-formは幅80％なので結果左右に10％ずつ空いた位置にラベルとテキストボックスがきれいに配列される */
+  padding: 3px 8px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  display:block;
+}
+.converter-form{
+  display: block;
+  text-align: left;
+  width: 80%; 
+    /* ↑こいつがvalueの親要素で、 section-body内の80％！そしてconverter-inputを幅100％にすると親要素のこいついっぱいに広がり、valueのlabelとinputがきれいな並びになる */
+  margin: 0 auto;
+}
+.select{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 80%;
+  /* ↑こいつがCONVERTER-FROM&toの親要素で、 section-body内の80％！そしてselectを幅100％にすると親要素のこいついっぱいにmeter&kiloが広がり、valueのlabelとinputがきれいな並びになる */
+  margin: 10px auto;
+}
+.converter-from,.converter-to{
+  font-size: 14px;
+   padding: 3px 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 10px 0PX;
+  width: 100%;
+/* ↑こいつは親要素sectionに対していっぱいに広がる！converter-from'toは幅80％なので結果左右に10％ずつ空いた位置にラベルとテキストボックスがきれいに配列される */
+}
+.converter-result{
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: blue;
+  background-color: #e0e0e0;
+  padding : 20px;
+  border-radius : 5px;
+  width: 80%;
+  margin: 0 auto;
+  /* ↑margin: 0 auto;とwidth:80%;で中央寄せの上のvalueやfromとtoに位置を合わせている */
 }
